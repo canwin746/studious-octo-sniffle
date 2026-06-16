@@ -1,0 +1,15 @@
+{
+  "name": "teacher-digital-profile",
+  "version": "1.0.0",
+  "description": "教师数字画像系统",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --workspace=@tdp/api",
+    "dev:web": "npm run dev --workspace=@tdp/web",
+    "build:api": "npm run build --workspace=@tdp/api",
+    "build:web": "npm run build --workspace=@tdp/web"
+  }
+}
