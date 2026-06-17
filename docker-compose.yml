@@ -31,6 +31,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    restart: unless-stopped
 
   web:
     build:
@@ -38,11 +39,12 @@ services:
       dockerfile: Dockerfile
     container_name: tdp-web
     environment:
-      - VITE_API_URL=http://localhost:3001/api
+      - VITE_API_URL=http://api:3001/api   # 容器内访问 API，用服务名
     ports:
-      - "5173:5173"
+      - "80:80"   # 改成 80，方便域名直接访问
     depends_on:
       - api
+    restart: unless-stopped
 
 volumes:
   postgres_data:
