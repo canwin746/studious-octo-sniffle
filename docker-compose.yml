@@ -40,8 +40,8 @@ services:
     container_name: tdp-web
     environment:
       - VITE_API_URL=http://api:3001/api   # 容器内访问 API，用服务名
-    ports:
-      - "80:80"   # 改成 80，方便域名直接访问
+   # ports:
+    #  - "80:80"   # 改成 80，方便域名直接访问
     depends_on:
       - api
     restart: unless-stopped
